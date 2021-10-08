@@ -214,6 +214,11 @@ body {
     transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
 }
 
+.post:hover {
+    transform: translateY(-8px);
+    box-shadow: rgb(0 0 0 / 8%) 0px 12px 20px 0px;
+}
+
 .post__image-wrapper {
     position: relative;
     padding-top: 52.1921%;
