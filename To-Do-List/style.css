@@ -67,9 +67,18 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
+    width: 0px;
     position: relative;
     border-right: 1px solid black;
+    visibility: hidden;
+    transition: all 300ms ease;
+}
+
+.todos__today.open,
+.todos__tomorrow.open {
+    width: 100%;
+    visibility: visible;
 }
 
 .todos__items {

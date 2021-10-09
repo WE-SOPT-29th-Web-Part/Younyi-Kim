@@ -11,6 +11,7 @@
             crossorigin="anonymous"
         />
         <link rel="stylesheet" href="style.css" />
+        <script defer src="script.js"></script>
         <title>To-do List</title>
     </head>
     <body>
@@ -23,10 +24,10 @@
             <button class="options__btn options__both">함께 보기</button>
         </nav>
         <main class="todos">
-            <section class="todos__today">
+            <section class="todos__today open">
                 <h2 class="todos__header">오늘 할 일</h2>
                 <ul class="todos__items">
-                    <li class="todos__item">
+                    <!-- <li class="todos__item">
                         <div class="todos__name">HTML 공부</div>
                         <button class="todos__delete">
                             <i class="fas fa-times"></i>
@@ -43,7 +44,7 @@
                         <button class="todos__delete">
                             <i class="fas fa-times"></i>
                         </button>
-                    </li>
+                    </li> -->
                 </ul>
                 <input type="text" name="" id="" class="todos__input" />
                 <div class="todos__btn-wrapper">
@@ -52,10 +53,10 @@
                     </button>
                 </div>
             </section>
-            <section class="todos__tomorrow">
+            <section class="todos__tomorrow open">
                 <h2 class="todos__header">내일 할 일</h2>
                 <ul class="todos__items">
-                    <li class="todos__item">
+                    <!-- <li class="todos__item">
                         <div class="todos__name">Java 공부</div>
                         <button class="todos__delete">
                             <i class="fas fa-times"></i>
@@ -72,7 +73,7 @@
                         <button class="todos__delete">
                             <i class="fas fa-times"></i>
                         </button>
-                    </li>
+                    </li> -->
                 </ul>
                 <input type="text" name="" id="" class="todos__input" />
                 <div class="todos__btn-wrapper">
@@ -83,6 +84,5 @@
             </section>
         </main>
         <footer class="footer">SOPT 29th Web Part</footer>
-        <script src="script.js"></script>
     </body>
 </html>
