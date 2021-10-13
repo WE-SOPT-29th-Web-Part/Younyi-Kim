@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            sizes="32x32"
+            href="https://static.velog.io/favicons/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            sizes="96x96"
+            href="https://static.velog.io/favicons/favicon-96x96.png"
+        />
+        <link
+            rel="icon"
+            sizes="16x16"
+            href="https://static.velog.io/favicons/favicon-16x16.png"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+            integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>velog</title>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="header__title">velog</h1>
+            <section class="header__items">
+                <button class="header__item header__item--btn-search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="header__item header__item--btn-new">
+                    새 글 작성
+                </button>
+                <div class="header__item header__item-img">
+                    <img
+                        src="https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=120"
+                        alt=""
+                        class="header__item-profile"
+                    />
+                </div>
+                <button class="header__item header__item--menu">
+                    <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="header__menu--wrapper active">
+                    <div class="header_menu">
+                        <a href="" class="menu-my-velog">
+                            <div class="menu-item my-velog">내 벨로그</div>
+                        </a>
+                        <a href="" class="menu-new-post">
+                            <div class="menu-item new-post">새 글 작성</div>
+                        </a>
+                        <a href="" class="menu-temp-post">
+                            <div class="menu-item temp-post">임시 글</div>
+                        </a>
+                        <a href="" class="menu-read-list">
+                            <div class="menu-item read-list">읽기 목록</div>
+                        </a>
+                        <a href="" class="menu-setting">
+                            <div class="menu-item setting">설정</div>
+                        </a>
+                        <a href="" class="menu-logout">
+                            <div class="menu-item logout">로그아웃</div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </header>
+        <div class="content">
+            <nav class="nav">
+                <div class="nav__items">
+                    <div class="nav__trending active">
+                        <div class="nav__trending-icon">
+                            <img
+                                src="./assets/trending-up-svgrepo-com.svg"
+                                alt=""
+                            />
+                        </div>
+                        트렌딩
+                    </div>
+                    <div class="nav__recent">
+                        <div class="nav__recent-icon">
+                            <i class="far fa-clock"></i>
+                        </div>
+                        최신
+                    </div>
+                    <button class="nav__period">
+                        <span>이번주</span>
+                        <div class="nav__period-icon">
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                    </button>
+                </div>
+                <button class="nav__options">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+            </nav>
+            <main class="main">
+                <section class="posts">
+                    <article class="post">
+                        <div class="post__image-wrapper">
+                            <img
+                                src="https://velog-clone.netlify.app/assets/images/webpart.png"
+                                alt=""
+                                class="post__image"
+                            />
+                        </div>
+
+                        <div class="post__wrapper">
+                            <h4 class="post__title">
+                                주니어 프론트엔드 개발자
+                            </h4>
+                            <div class="post__discription-wrapper">
+                                <p class="post__discription-content">
+                                    SOPT는 이러한 사회의 요구에 맞추어 준비된
+                                    예비 IT인을 육성하고, 대학생의 젊은 열정과
+                                    패기를 뽐내며, 도전에 대한 의욕을
+                                    고취시키고, 다양한 경험을 쌓을 수 있도록
+                                    돕습니다.
+                                </p>
+                            </div>
+                            <div class="post__info">
+                                <span class="post__date">2021년 10월 5일</span>
+                                <span class="seperator">.</span>
+                                <span class="post__comment">9개의 댓글</span>
+                            </div>
+                        </div>
+                        <div class="post__userInfo">
+                            <img
+                                class="userInfo__thumbnail"
+                                src="https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=120"
+                                alt=""
+                            />
+                            <span class="userInfo__name"
+                                >by <b>younyi kim</b></span
+                            >
+                            <div class="post__likes">
+                                <i class="fas fa-heart"></i>
+                                <span class="post__likes-total">49</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="post">
+                        <div class="post__image-wrapper">
+                            <img
+                                src="https://velog-clone.netlify.app/assets/images/webpart.png"
+                                alt=""
+                                class="post__image"
+                            />
+                        </div>
+
+                        <div class="post__wrapper">
+                            <h4 class="post__title">
+                                주니어 프론트엔드 개발자
+                            </h4>
+                            <div class="post__discription-wrapper">
+                                <p class="post__discription-content">
+                                    SOPT는 이러한 사회의 요구에 맞추어 준비된
+                                    예비 IT인을 육성하고, 대학생의 젊은 열정과
+                                    패기를 뽐내며, 도전에 대한 의욕을
+                                    고취시키고, 다양한 경험을 쌓을 수 있도록
+                                    돕습니다.
+                                </p>
+                            </div>
+                            <div class="post__info">
+                                <span class="post__date">2021년 10월 5일</span>
+                                <span class="seperator">.</span>
+                                <span class="post__comment">9개의 댓글</span>
+                            </div>
+                        </div>
+                        <div class="post__userInfo">
+                            <img
+                                class="userInfo__thumbnail"
+                                src="https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=120"
+                                alt=""
+                            />
+                            <span class="userInfo__name"
+                                >by <b>younyi kim</b></span
+                            >
+                            <div class="post__likes">
+                                <i class="fas fa-heart"></i>
+                                <span class="post__likes-total">49</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="post">
+                        <div class="post__image-wrapper">
+                            <img
+                                src="https://velog-clone.netlify.app/assets/images/webpart.png"
+                                alt=""
+                                class="post__image"
+                            />
+                        </div>
+
+                        <div class="post__wrapper">
+                            <h4 class="post__title">
+                                주니어 프론트엔드 개발자
+                            </h4>
+                            <div class="post__discription-wrapper">
+                                <p class="post__discription-content">
+                                    SOPT는 이러한 사회의 요구에 맞추어 준비된
+                                    예비 IT인을 육성하고, 대학생의 젊은 열정과
+                                    패기를 뽐내며, 도전에 대한 의욕을
+                                    고취시키고, 다양한 경험을 쌓을 수 있도록
+                                    돕습니다.
+                                </p>
+                            </div>
+                            <div class="post__info">
+                                <span class="post__date">2021년 10월 5일</span>
+                                <span class="seperator">.</span>
+                                <span class="post__comment">9개의 댓글</span>
+                            </div>
+                        </div>
+                        <div class="post__userInfo">
+                            <img
+                                class="userInfo__thumbnail"
+                                src="https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=120"
+                                alt=""
+                            />
+                            <span class="userInfo__name"
+                                >by <b>younyi kim</b></span
+                            >
+                            <div class="post__likes">
+                                <i class="fas fa-heart"></i>
+                                <span class="post__likes-total">49</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="post">
+                        <div class="post__image-wrapper">
+                            <img
+                                src="https://velog-clone.netlify.app/assets/images/webpart.png"
+                                alt=""
+                                class="post__image"
+                            />
+                        </div>
+
+                        <div class="post__wrapper">
+                            <h4 class="post__title">
+                                주니어 프론트엔드 개발자
+                            </h4>
+                            <div class="post__discription-wrapper">
+                                <p class="post__discription-content">
+                                    SOPT는 이러한 사회의 요구에 맞추어 준비된
+                                    예비 IT인을 육성하고, 대학생의 젊은 열정과
+                                    패기를 뽐내며, 도전에 대한 의욕을
+                                    고취시키고, 다양한 경험을 쌓을 수 있도록
+                                    돕습니다.
+                                </p>
+                            </div>
+                            <div class="post__info">
+                                <span class="post__date">2021년 10월 5일</span>
+                                <span class="seperator">.</span>
+                                <span class="post__comment">9개의 댓글</span>
+                            </div>
+                        </div>
+                        <div class="post__userInfo">
+                            <img
+                                class="userInfo__thumbnail"
+                                src="https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=120"
+                                alt=""
+                            />
+                            <span class="userInfo__name"
+                                >by <b>younyi kim</b></span
+                            >
+                            <div class="post__likes">
+                                <i class="fas fa-heart"></i>
+                                <span class="post__likes-total">49</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="post">
+                        <div class="post__image-wrapper">
+                            <img
+                                src="https://velog-clone.netlify.app/assets/images/webpart.png"
+                                alt=""
+                                class="post__image"
+                            />
+                        </div>
+
+                        <div class="post__wrapper">
+                            <h4 class="post__title">
+                                주니어 프론트엔드 개발자
+                            </h4>
+                            <div class="post__discription-wrapper">
+                                <p class="post__discription-content">
+                                    SOPT는 이러한 사회의 요구에 맞추어 준비된
+                                    예비 IT인을 육성하고, 대학생의 젊은 열정과
+                                    패기를 뽐내며, 도전에 대한 의욕을
+                                    고취시키고, 다양한 경험을 쌓을 수 있도록
+                                    돕습니다.
+                                </p>
+                            </div>
+                            <div class="post__info">
+                                <span class="post__date">2021년 10월 5일</span>
+                                <span class="seperator">.</span>
+                                <span class="post__comment">9개의 댓글</span>
+                            </div>
+                        </div>
+                        <div class="post__userInfo">
+                            <img
+                                class="userInfo__thumbnail"
+                                src="https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=120"
+                                alt=""
+                            />
+                            <span class="userInfo__name"
+                                >by <b>younyi kim</b></span
+                            >
+                            <div class="post__likes">
+                                <i class="fas fa-heart"></i>
+                                <span class="post__likes-total">49</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="post">
+                        <div class="post__image-wrapper">
+                            <img
+                                src="https://velog-clone.netlify.app/assets/images/webpart.png"
+                                alt=""
+                                class="post__image"
+                            />
+                        </div>
+
+                        <div class="post__wrapper">
+                            <h4 class="post__title">
+                                주니어 프론트엔드 개발자
+                            </h4>
+                            <div class="post__discription-wrapper">
+                                <p class="post__discription-content">
+                                    SOPT는 이러한 사회의 요구에 맞추어 준비된
+                                    예비 IT인을 육성하고, 대학생의 젊은 열정과
+                                    패기를 뽐내며, 도전에 대한 의욕을
+                                    고취시키고, 다양한 경험을 쌓을 수 있도록
+                                    돕습니다.
+                                </p>
+                            </div>
+                            <div class="post__info">
+                                <span class="post__date">2021년 10월 5일</span>
+                                <span class="seperator">.</span>
+                                <span class="post__comment">9개의 댓글</span>
+                            </div>
+                        </div>
+                        <div class="post__userInfo">
+                            <img
+                                class="userInfo__thumbnail"
+                                src="https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=120"
+                                alt=""
+                            />
+                            <span class="userInfo__name"
+                                >by <b>younyi kim</b></span
+                            >
+                            <div class="post__likes">
+                                <i class="fas fa-heart"></i>
+                                <span class="post__likes-total">49</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="post">
+                        <div class="post__image-wrapper">
+                            <img
+                                src="https://velog-clone.netlify.app/assets/images/webpart.png"
+                                alt=""
+                                class="post__image"
+                            />
+                        </div>
+
+                        <div class="post__wrapper">
+                            <h4 class="post__title">
+                                주니어 프론트엔드 개발자
+                            </h4>
+                            <div class="post__discription-wrapper">
+                                <p class="post__discription-content">
+                                    SOPT는 이러한 사회의 요구에 맞추어 준비된
+                                    예비 IT인을 육성하고, 대학생의 젊은 열정과
+                                    패기를 뽐내며, 도전에 대한 의욕을
+                                    고취시키고, 다양한 경험을 쌓을 수 있도록
+                                    돕습니다.
+                                </p>
+                            </div>
+                            <div class="post__info">
+                                <span class="post__date">2021년 10월 5일</span>
+                                <span class="seperator">.</span>
+                                <span class="post__comment">9개의 댓글</span>
+                            </div>
+                        </div>
+                        <div class="post__userInfo">
+                            <img
+                                class="userInfo__thumbnail"
+                                src="https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=120"
+                                alt=""
+                            />
+                            <span class="userInfo__name"
+                                >by <b>younyi kim</b></span
+                            >
+                            <div class="post__likes">
+                                <i class="fas fa-heart"></i>
+                                <span class="post__likes-total">49</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="post">
+                        <div class="post__image-wrapper">
+                            <img
+                                src="https://velog-clone.netlify.app/assets/images/webpart.png"
+                                alt=""
+                                class="post__image"
+                            />
+                        </div>
+
+                        <div class="post__wrapper">
+                            <h4 class="post__title">
+                                주니어 프론트엔드 개발자
+                            </h4>
+                            <div class="post__discription-wrapper">
+                                <p class="post__discription-content">
+                                    SOPT는 이러한 사회의 요구에 맞추어 준비된
+                                    예비 IT인을 육성하고, 대학생의 젊은 열정과
+                                    패기를 뽐내며, 도전에 대한 의욕을
+                                    고취시키고, 다양한 경험을 쌓을 수 있도록
+                                    돕습니다.
+                                </p>
+                            </div>
+                            <div class="post__info">
+                                <span class="post__date">2021년 10월 5일</span>
+                                <span class="seperator">.</span>
+                                <span class="post__comment">9개의 댓글</span>
+                            </div>
+                        </div>
+                        <div class="post__userInfo">
+                            <img
+                                class="userInfo__thumbnail"
+                                src="https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=120"
+                                alt=""
+                            />
+                            <span class="userInfo__name"
+                                >by <b>younyi kim</b></span
+                            >
+                            <div class="post__likes">
+                                <i class="fas fa-heart"></i>
+                                <span class="post__likes-total">49</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="post">
+                        <div class="post__image-wrapper">
+                            <img
+                                src="https://velog-clone.netlify.app/assets/images/webpart.png"
+                                alt=""
+                                class="post__image"
+                            />
+                        </div>
+
+                        <div class="post__wrapper">
+                            <h4 class="post__title">
+                                주니어 프론트엔드 개발자
+                            </h4>
+                            <div class="post__discription-wrapper">
+                                <p class="post__discription-content">
+                                    SOPT는 이러한 사회의 요구에 맞추어 준비된
+                                    예비 IT인을 육성하고, 대학생의 젊은 열정과
+                                    패기를 뽐내며, 도전에 대한 의욕을
+                                    고취시키고, 다양한 경험을 쌓을 수 있도록
+                                    돕습니다.
+                                </p>
+                            </div>
+                            <div class="post__info">
+                                <span class="post__date">2021년 10월 5일</span>
+                                <span class="seperator">.</span>
+                                <span class="post__comment">9개의 댓글</span>
+                            </div>
+                        </div>
+                        <div class="post__userInfo">
+                            <img
+                                class="userInfo__thumbnail"
+                                src="https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=120"
+                                alt=""
+                            />
+                            <span class="userInfo__name"
+                                >by <b>younyi kim</b></span
+                            >
+                            <div class="post__likes">
+                                <i class="fas fa-heart"></i>
+                                <span class="post__likes-total">49</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="post">
+                        <div class="post__image-wrapper">
+                            <img
+                                src="https://velog-clone.netlify.app/assets/images/webpart.png"
+                                alt=""
+                                class="post__image"
+                            />
+                        </div>
+
+                        <div class="post__wrapper">
+                            <h4 class="post__title">
+                                주니어 프론트엔드 개발자
+                            </h4>
+                            <div class="post__discription-wrapper">
+                                <p class="post__discription-content">
+                                    SOPT는 이러한 사회의 요구에 맞추어 준비된
+                                    예비 IT인을 육성하고, 대학생의 젊은 열정과
+                                    패기를 뽐내며, 도전에 대한 의욕을
+                                    고취시키고, 다양한 경험을 쌓을 수 있도록
+                                    돕습니다.
+                                </p>
+                            </div>
+                            <div class="post__info">
+                                <span class="post__date">2021년 10월 5일</span>
+                                <span class="seperator">.</span>
+                                <span class="post__comment">9개의 댓글</span>
+                            </div>
+                        </div>
+                        <div class="post__userInfo">
+                            <img
+                                class="userInfo__thumbnail"
+                                src="https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=120"
+                                alt=""
+                            />
+                            <span class="userInfo__name"
+                                >by <b>younyi kim</b></span
+                            >
+                            <div class="post__likes">
+                                <i class="fas fa-heart"></i>
+                                <span class="post__likes-total">49</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="post">
+                        <div class="post__image-wrapper">
+                            <img
+                                src="https://velog-clone.netlify.app/assets/images/webpart.png"
+                                alt=""
+                                class="post__image"
+                            />
+                        </div>
+
+                        <div class="post__wrapper">
+                            <h4 class="post__title">
+                                주니어 프론트엔드 개발자
+                            </h4>
+                            <div class="post__discription-wrapper">
+                                <p class="post__discription-content">
+                                    SOPT는 이러한 사회의 요구에 맞추어 준비된
+                                    예비 IT인을 육성하고, 대학생의 젊은 열정과
+                                    패기를 뽐내며, 도전에 대한 의욕을
+                                    고취시키고, 다양한 경험을 쌓을 수 있도록
+                                    돕습니다.
+                                </p>
+                            </div>
+                            <div class="post__info">
+                                <span class="post__date">2021년 10월 5일</span>
+                                <span class="seperator">.</span>
+                                <span class="post__comment">9개의 댓글</span>
+                            </div>
+                        </div>
+                        <div class="post__userInfo">
+                            <img
+                                class="userInfo__thumbnail"
+                                src="https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=120"
+                                alt=""
+                            />
+                            <span class="userInfo__name"
+                                >by <b>younyi kim</b></span
+                            >
+                            <div class="post__likes">
+                                <i class="fas fa-heart"></i>
+                                <span class="post__likes-total">49</span>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>
