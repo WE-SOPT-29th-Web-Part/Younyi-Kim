@@ -67,7 +67,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* width: 100%; */
     width: 0px;
     position: relative;
     border-right: 1px solid black;
