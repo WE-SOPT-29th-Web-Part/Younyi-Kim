@@ -67,8 +67,6 @@ function controlModal(post) {
     modal.appendChild(modalPost);
     modal.appendChild(closeBtn);
 
-    modal.style.top = document.documentElement.scrollTop + "px";
-    modal.style.height = window.screen.height - 200 + "px";
     modal.classList.add("active");
     body.style.overflow = "hidden";
 
