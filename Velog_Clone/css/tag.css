@@ -1,0 +1,28 @@
+:root {
+    --color-green: rgb(18, 184, 134);
+    --color-ligth-grey: rgb(248, 249, 250);
+    --color-mid-grey: rgb(134, 142, 150);
+}
+
+body {
+    background: var(--color-ligth-grey);
+}
+
+.tags__input {
+    border: 0;
+    outline: 0;
+    font-size: 15px;
+    margin: 5px;
+    background-color: transparent;
+}
+
+.tag__item {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 5px;
+    background-color: #fff;
+    font-size: 15px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    color: var(--color-green);
+}

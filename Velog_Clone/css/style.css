@@ -34,7 +34,7 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
-    background: rgb(248, 249, 250);
+    background: var(--color-ligth-grey);
 }
 
 .header {

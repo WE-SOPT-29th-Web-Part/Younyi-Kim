@@ -8,6 +8,7 @@ const headerMenu = document.querySelector(".header__menu");
 const posts = [...document.querySelectorAll(".post")];
 const modal = document.querySelector(".modal");
 const modalCloseBtn = document.querySelector(".modal__close");
+const createPostBtn = document.querySelector(".header__item--btn-new");
 
 // 기간 선택 dropdown을 표시하는 버튼의 클릭 이벤트 리스너
 peroidBtn.addEventListener("click", () => {
@@ -31,6 +32,12 @@ posts.forEach((post, index) => {
     post.addEventListener("click", () => {
         controlModal(post);
     });
+});
+
+// 새글 작성 버튼의 이벤트 리스너
+createPostBtn.addEventListener("click", () => {
+    const link = "./tag.html";
+    location.href = link;
 });
 
 // Period Dropdown 함수
