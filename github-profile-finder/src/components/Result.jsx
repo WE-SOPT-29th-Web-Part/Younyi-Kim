@@ -29,11 +29,9 @@ const Result = ({ userInfo, setUserInfo }) => {
         </Root>
     ) : (
         <></>
-        // React.fragment 아무 태그가 없다고 말해주는 태그. 명목상 구분자 역할을 함.
     );
 };
 
-// sc 단축키  + tab
 const Root = styled.article`
     display: flex;
     flex-direction: column;
@@ -74,7 +72,6 @@ const Root = styled.article`
     }
 
     & > img {
-        // 자기선택자 &
         width: 200px;
         height: 200px;
         border-radius: 50%;
@@ -85,9 +82,6 @@ const Root = styled.article`
         font-size: 24px;
         margin-top: 24px;
         font-weight: bold;
-        /* &:hover {
-            color: tomato;
-        } */
     }
 
     & > h4 {
