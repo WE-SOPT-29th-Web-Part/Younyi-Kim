@@ -12,10 +12,31 @@ const SearchBar = ({ setUserInfo }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const { data } = await axios.get(
-            `https://api.github.com/users/${user}`
-        );
-        setUserInfo(data);
+        // 현재의 status와 data 값을 풀어헤치고, state만 pending으로 변경
+        setUserInfo((currentUserInfo) => ({
+            ...currentUserInfo,
+            status: "pending", // data 받아오는 중
+        }));
+
+        try {
+            const { data } = await axios.get(
+                `https://api.github.com/users/${user}`
+            );
+
+            setUserInfo((currentUserInfo) => ({
+                ...currentUserInfo,
+                data: data,
+                status: "resolved", // data 받아오는 데 성공
+            }));
+        } catch (error) {
+            setUserInfo((currentUserInfo) => ({
+                ...currentUserInfo,
+                data: null,
+                status: "rejected", // data 받아오는 데 성공
+            }));
+            console.log(error);
+        }
+
         setUser("");
     };
 
@@ -41,4 +62,5 @@ const Input = styled.input`
     border-radius: 20px;
     outline: 0;
 `;
+
 export default SearchBar;

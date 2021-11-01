@@ -2,34 +2,30 @@ import React from "react";
 import styled from "styled-components"; // imsc 단축키
 
 const Result = ({ userInfo, setUserInfo }) => {
-    return userInfo.avatar_url ? (
-        <Root>
-            <button onClick={() => setUserInfo({})}>닫기</button>
-            <img src={userInfo.avatar_url} alt="" />
-            <h3>{userInfo.name}</h3>
-            <h4>{userInfo.login}</h4>
-            <p>{userInfo.bio}</p>
-            <a href={userInfo.html_url} target="_blank">
-                Visit Github
-            </a>
-            <Ul>
-                <li>
-                    <strong>Followers</strong>
-                    {userInfo.followers}
-                </li>
-                <li>
-                    <strong>Following</strong>
-                    {userInfo.following}
-                </li>
-                <li>
-                    <strong>Repos</strong>
-                    {userInfo.public_repos}
-                </li>
-            </Ul>
-        </Root>
-    ) : (
-        <></>
-    );
+    <Root>
+        <button onClick={() => setUserInfo({})}>닫기</button>
+        <img src={userInfo.avatar_url} alt="" />
+        <h3>{userInfo.name}</h3>
+        <h4>{userInfo.login}</h4>
+        <p>{userInfo.bio}</p>
+        <a href={userInfo.html_url} target="_blank">
+            Visit Github
+        </a>
+        <Ul>
+            <li>
+                <strong>Followers</strong>
+                {userInfo.followers}
+            </li>
+            <li>
+                <strong>Following</strong>
+                {userInfo.following}
+            </li>
+            <li>
+                <strong>Repos</strong>
+                {userInfo.public_repos}
+            </li>
+        </Ul>
+    </Root>;
 };
 
 const Root = styled.article`
