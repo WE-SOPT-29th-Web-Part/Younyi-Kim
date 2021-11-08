@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 
-const Tomorrow = () => {
+const Tomorrow = ({ tomorrowInfo, setTomorrowInfo }) => {
     const [todoList, setTodoList] = useState([]);
     const [value, setValue] = useState("");
 
@@ -15,6 +15,11 @@ const Tomorrow = () => {
         const newList = todoList.concat({ id: uuidv4(), value });
 
         setTodoList(newList);
+
+        setTomorrowInfo(() => ({
+            data: newList,
+        }));
+
         setValue("");
     };
 
@@ -28,20 +33,25 @@ const Tomorrow = () => {
         const newList = todoList.filter((todo) => todo.id !== id);
 
         setTodoList(newList);
+
+        setTomorrowInfo(() => ({
+            data: newList,
+        }));
     };
 
     return (
         <TodoTomorrow>
             <h2>Tomorrow</h2>
             <Ul>
-                {todoList.map((todo) => (
-                    <li key={todo.id}>
-                        <span>{todo.value}</span>
-                        <button onClick={() => handleDelete(todo.id)}>
-                            Delete
-                        </button>
-                    </li>
-                ))}
+                {tomorrowInfo.data &&
+                    tomorrowInfo.data.map((todo) => (
+                        <li key={todo.id}>
+                            <span>{todo.value}</span>
+                            <button onClick={() => handleDelete(todo.id)}>
+                                Delete
+                            </button>
+                        </li>
+                    ))}
             </Ul>
             <input
                 type="text"

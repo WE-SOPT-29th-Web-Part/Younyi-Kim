@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 
-const Today = ({ todoInfo, setTodoInfo }) => {
-    const [todoList, setTodoList] = useState([todoInfo]);
+const Today = ({ todayInfo, setTodayInfo }) => {
+    const [todoList, setTodoList] = useState([]);
     const [value, setValue] = useState("");
 
     const handleChange = (e) => {
@@ -16,12 +16,10 @@ const Today = ({ todoInfo, setTodoInfo }) => {
         const newList = todoList.concat({ id: uuidv4(), value });
 
         setTodoList(newList);
-        setTodoInfo(() => ({
+
+        setTodayInfo(() => ({
             data: newList,
         }));
-
-        console.log(todoList);
-        console.log(todoInfo.data);
 
         setValue("");
     };
@@ -36,7 +34,8 @@ const Today = ({ todoInfo, setTodoInfo }) => {
         const newList = todoList.filter((todo) => todo.id !== id);
 
         setTodoList(newList);
-        setTodoInfo(() => ({
+
+        setTodayInfo(() => ({
             data: newList,
         }));
     };
@@ -45,14 +44,15 @@ const Today = ({ todoInfo, setTodoInfo }) => {
         <TodoToday>
             <h2>Today</h2>
             <Ul>
-                {todoList.map((todo) => (
-                    <li key={todo.id}>
-                        <span>{todo.value}</span>
-                        <button onClick={() => handleDelete(todo.id)}>
-                            Delete
-                        </button>
-                    </li>
-                ))}
+                {todayInfo.data &&
+                    todayInfo.data.map((todo) => (
+                        <li key={todo.id}>
+                            <span>{todo.value}</span>
+                            <button onClick={() => handleDelete(todo.id)}>
+                                Delete
+                            </button>
+                        </li>
+                    ))}
             </Ul>
             <input
                 type="text"

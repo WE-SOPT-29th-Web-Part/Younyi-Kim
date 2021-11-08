@@ -1,21 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
-const Navigation = ({ todoInfo, setTodoInfo }) => {
+const Navigation = ({ todoStat, setTodoStat }) => {
     const handleToday = () => {
-        setTodoInfo(() => ({
+        setTodoStat(() => ({
             status: "today",
         }));
     };
 
     const handleTomorrow = () => {
-        setTodoInfo(() => ({
+        setTodoStat(() => ({
             status: "tomorrow",
         }));
     };
 
     const handleBoth = () => {
-        setTodoInfo(() => ({
+        setTodoStat(() => ({
             status: "both",
         }));
     };

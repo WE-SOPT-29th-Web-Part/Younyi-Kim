@@ -1,37 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Today from "./Today";
 import Tomorrow from "./Tomorrow";
 
-const Todos = ({ todoInfo, setTodoInfo, handleChangeTodo }) => {
-    //  현재 문제점 : 리스트가 추가되는 state의 변화가 자식 컴포넌트(Today 등)에서 발생
-    // childern => parent state lifting 방법 생각
-    switch (todoInfo.status) {
+const Todos = ({ todoStat }) => {
+    const [tomorrowInfo, setTomorrowInfo] = useState([{ data: null }]);
+
+    const [todayInfo, setTodayInfo] = useState([{ data: null }]);
+
+    switch (todoStat.status) {
         case "today":
             return (
                 <Todo>
-                    <Today
-                        todoInfo={todoInfo}
-                        setTodoInfo={setTodoInfo}
-                        handleChangeTodo={handleChangeTodo}
-                    />
+                    <Today todayInfo={todayInfo} setTodayInfo={setTodayInfo} />
                 </Todo>
             );
         case "tomorrow":
             return (
                 <Todo>
-                    <Tomorrow todoInfo={todoInfo} setTodoInfo={setTodoInfo} />
+                    <Tomorrow
+                        tomorrowInfo={tomorrowInfo}
+                        setTomorrowInfo={setTomorrowInfo}
+                    />
                 </Todo>
             );
         default:
             return (
                 <Todo>
-                    <Today
-                        todoInfo={todoInfo}
-                        setTodoInfo={setTodoInfo}
-                        handleChangeTodo={handleChangeTodo}
+                    <Today todayInfo={todayInfo} setTodayInfo={setTodayInfo} />
+                    <Tomorrow
+                        tomorrowInfo={tomorrowInfo}
+                        setTomorrowInfo={setTomorrowInfo}
                     />
-                    <Tomorrow todoInfo={todoInfo} setTodoInfo={setTodoInfo} />
                 </Todo>
             );
     }

@@ -6,21 +6,13 @@ import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 
 function App() {
-    const [todoInfo, setTodoInfo] = useState({ data: null, status: "both" });
-
-    const handleChangeTodo = (newValue) => {
-        setTodoInfo({ data: newValue });
-    };
+    const [todoStat, setTodoStat] = useState({ data: [], status: "both" });
 
     return (
         <>
             <Header />
-            <Navigation todoInfo={todoInfo} setTodoInfo={setTodoInfo} />
-            <Todos
-                todoInfo={todoInfo}
-                setTodoInfo={setTodoInfo}
-                handleChangeTodo={handleChangeTodo}
-            />
+            <Navigation todoStat={todoStat} setTodoStat={setTodoStat} />
+            <Todos todoStat={todoStat} setTodoStat={setTodoStat} />
             <Footer />
         </>
     );
