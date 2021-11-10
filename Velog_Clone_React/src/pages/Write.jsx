@@ -3,6 +3,7 @@ import ArticleTitle from "../components/write/ArticleTitle";
 import ArticleTags from "../components/write/ArticleTags";
 import ArticleBody from "../components/write/ArticleBody";
 import ArticleFooter from "../components/write/ArticleFooter";
+import Publish from "../components/write/publishScreen/Publish";
 import { client } from "../libs/api";
 import styled from "styled-components";
 
@@ -17,6 +18,8 @@ const Write = () => {
         thumbnail: "", // => 사진 업로드 다음 시간에
         data: "", // 과제(오늘 날짜 찍어주기)
     });
+
+    const [isPublishScreen, setIsPublishScreen] = useState(false);
 
     useEffect(() => {
         console.log(`articleData`, articleData);
@@ -38,6 +41,11 @@ const Write = () => {
         });
     };
 
+    const handleDataChange = (key, value) => {
+        const tempArticleData = { ...articleData };
+        tempArticleData[key] = value;
+        setArticleData(tempArticleData);
+    };
     const handlePost = async () => {
         await createArticle();
     };
@@ -51,8 +59,14 @@ const Write = () => {
                 setArticleData={setArticleData}
             />
             <ArticleBody setArticleData={setArticleData} />
-            <ArticleFooter />
-            {/* <button onClick={handlePost}>POST</button> */}
+            <ArticleFooter setIsPublishScreen={setIsPublishScreen} />
+            <Publish
+                summary={articleData.summary}
+                handleDataChange={handleDataChange}
+                createArticle={createArticle}
+                isPublishScreen={isPublishScreen}
+                setIsPublishScreen={setIsPublishScreen}
+            />
         </StyledWriteWrapper>
     );
 };

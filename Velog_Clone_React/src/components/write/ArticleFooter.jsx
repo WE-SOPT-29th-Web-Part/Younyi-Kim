@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { FaArrowLeft } from "react-icons/fa";
-const ArticleFooter = () => {
+import { Link } from "react-router-dom";
+const ArticleFooter = ({ setIsPublishScreen }) => {
     return (
         <StyledArticleFooter>
             <StyledFooterWrapper>
@@ -11,7 +12,9 @@ const ArticleFooter = () => {
                 </button>
                 <StyledSubmitButton>
                     <button>임시저장</button>
-                    <button>출간하기</button>
+                    <button onClick={() => setIsPublishScreen(true)}>
+                        출간하기
+                    </button>
                 </StyledSubmitButton>
             </StyledFooterWrapper>
         </StyledArticleFooter>
