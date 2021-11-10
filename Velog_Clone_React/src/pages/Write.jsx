@@ -4,6 +4,7 @@ import ArticleTags from "../components/write/ArticleTags";
 import ArticleBody from "../components/write/ArticleBody";
 import ArticleFooter from "../components/write/ArticleFooter";
 import { client } from "../libs/api";
+import styled from "styled-components";
 
 const Write = () => {
     const [articleData, setArticleData] = useState({
@@ -42,8 +43,7 @@ const Write = () => {
     };
 
     return (
-        <div>
-            <button onClick={handlePost}>POST</button>
+        <StyledWriteWrapper>
             <ArticleTitle setArticleData={setArticleData} />
             <ArticleTags
                 articleData={articleData}
@@ -52,8 +52,17 @@ const Write = () => {
             />
             <ArticleBody setArticleData={setArticleData} />
             <ArticleFooter />
-        </div>
+            {/* <button onClick={handlePost}>POST</button> */}
+        </StyledWriteWrapper>
     );
 };
 
 export default Write;
+
+const StyledWriteWrapper = styled.div`
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: #fff;
+`;
