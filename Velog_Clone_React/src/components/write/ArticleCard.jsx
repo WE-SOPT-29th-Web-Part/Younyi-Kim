@@ -9,7 +9,9 @@ const ArticleCard = ({ article }) => {
     return (
         <>
             <StyledCard>
-                <img src={thumbnail} />
+                <StyledImageWrapper>
+                    <img src={thumbnail} />
+                </StyledImageWrapper>
                 <p>
                     <h3>{title}</h3>
                     <h4>{summary}</h4>
@@ -28,11 +30,6 @@ export default ArticleCard;
 const StyledCard = styled.div`
     @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: space-between;
-    margin: 0 auto;
     width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -40,11 +37,6 @@ const StyledCard = styled.div`
     margin-top: 4rem;
     font-family: "Roboto", sans-serif;
     border-bottom: 1px solid rgb(233, 236, 239);
-
-    img {
-        width: 100%;
-        height: 320px;
-    }
 
     p {
         font-size: 0.875rem;
@@ -77,7 +69,6 @@ const StyledCard = styled.div`
             font-size: 0.75rem;
             display: inline-flex;
             align-items: center;
-
             background: rgb(241, 243, 245);
             color: rgb(12, 166, 120);
         }
@@ -85,5 +76,20 @@ const StyledCard = styled.div`
         span + span {
             margin-left: 15px;
         }
+    }
+`;
+
+const StyledImageWrapper = styled.div`
+    position: relative;
+    padding-top: 52.1921%;
+    margin-bottom: 16px;
+
+    & > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 `;
