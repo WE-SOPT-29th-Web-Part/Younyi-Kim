@@ -9,10 +9,11 @@ const Publish = ({
     isPublishScreen,
     setIsPublishScreen,
 }) => {
+    if (!isPublishScreen) return null;
     return (
         <StyledRoot isPublishScreen={isPublishScreen}>
-            <PublishPreview handdle />
-            <PublishSubmit />
+            <PublishPreview />
+            <PublishSubmit setIsPublishScreen={setIsPublishScreen} />
         </StyledRoot>
     );
 };

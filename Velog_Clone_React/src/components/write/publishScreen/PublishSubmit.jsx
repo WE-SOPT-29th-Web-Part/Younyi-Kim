@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const PublishSubmit = () => {
+const PublishSubmit = ({ setIsPublishScreen }) => {
     return (
         <StyledSubmit>
             <div></div>
-            <button>취소</button>
+            <button onClick={() => setIsPublishScreen(false)}>취소</button>
             <button>출간하기</button>
         </StyledSubmit>
     );

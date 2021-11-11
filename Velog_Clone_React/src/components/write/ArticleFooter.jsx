@@ -8,7 +8,9 @@ const ArticleFooter = ({ setIsPublishScreen }) => {
             <StyledFooterWrapper>
                 <button>
                     <FaArrowLeft />
-                    <span>나가기</span>
+                    <StyledLink to="/">
+                        <span>나가기</span>
+                    </StyledLink>
                 </button>
                 <StyledSubmitButton>
                     <button>임시저장</button>
@@ -44,11 +46,6 @@ const StyledFooterWrapper = styled.div`
         cursor: pointer;
         background-color: inherit;
     }
-
-    & > button span {
-        margin-left: 10px;
-        font-size: 1.125rem;
-    }
 `;
 
 const StyledSubmitButton = styled.div`
@@ -72,4 +69,11 @@ const StyledSubmitButton = styled.div`
         background: rgb(18, 184, 134);
         color: white;
     }
+`;
+
+const StyledLink = styled(Link)`
+    margin-left: 10px;
+    font-size: 1.125rem;
+    text-decoration: none;
+    color: rgb(73, 80, 87);
 `;

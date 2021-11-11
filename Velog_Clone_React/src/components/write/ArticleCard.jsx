@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const ArticleCard = ({ article }) => {
-    console.log(`article`, article);
+    // console.log(`article`, article);
 
     const { id, title, body, summary, series, tags, thumbnail, date } = article;
 
