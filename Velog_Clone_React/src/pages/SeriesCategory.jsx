@@ -7,6 +7,7 @@ const SeriesCategory = () => {
 export default SeriesCategory;
 
 const StyledRoot = styled.div`
+    text-align: center;
     width: 100%;
     height: 100%;
 `;

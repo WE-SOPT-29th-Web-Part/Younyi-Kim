@@ -1,12 +1,21 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const PublishSubmit = ({ setIsPublishScreen }) => {
+const PublishSubmit = ({ setIsPublishScreen, createArticle }) => {
+    let navigate = useNavigate();
+
+    const handleSubmit = async () => {
+        await createArticle();
+
+        navigate("/");
+    };
+
     return (
         <StyledSubmit>
             <div></div>
             <button onClick={() => setIsPublishScreen(false)}>취소</button>
-            <button>출간하기</button>
+            <button onClick={handleSubmit}>출간하기</button>
         </StyledSubmit>
     );
 };

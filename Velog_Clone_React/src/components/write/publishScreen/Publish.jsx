@@ -6,14 +6,21 @@ import styled from "styled-components";
 const Publish = ({
     summary,
     createArticle,
+    handleDataChange,
     isPublishScreen,
     setIsPublishScreen,
 }) => {
     if (!isPublishScreen) return null;
     return (
         <StyledRoot isPublishScreen={isPublishScreen}>
-            <PublishPreview />
-            <PublishSubmit setIsPublishScreen={setIsPublishScreen} />
+            <PublishPreview
+                summary={summary}
+                handleDataChange={handleDataChange}
+            />
+            <PublishSubmit
+                setIsPublishScreen={setIsPublishScreen}
+                createArticle={createArticle}
+            />
         </StyledRoot>
     );
 };

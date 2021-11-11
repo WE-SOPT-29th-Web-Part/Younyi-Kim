@@ -21,10 +21,6 @@ const Write = () => {
 
     const [isPublishScreen, setIsPublishScreen] = useState(false);
 
-    useEffect(() => {
-        console.log(`articleData`, articleData);
-    }, [articleData]);
-
     const createArticle = async () => {
         const { data } = await client.get("/article");
         const id = data.length + 1;
@@ -37,7 +33,6 @@ const Write = () => {
             ...articleData,
             id,
             date,
-            summary: "요약입니다.",
         });
     };
 
