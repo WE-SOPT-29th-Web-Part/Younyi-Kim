@@ -7,7 +7,6 @@ import SeriesCategory from "./pages/SeriesCategory";
 import ArticlesContainer from "./components/home/ArticlesContainer";
 
 function App() {
-    // 1. 페이지 라우팅 - react-router-dom
     return (
         <>
             <BrowserRouter>

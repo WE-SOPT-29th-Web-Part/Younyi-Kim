@@ -1,12 +1,10 @@
 import React from "react";
-import ArticleCard from "./ArticleCard";
 import styled from "styled-components";
 
 const ArticleTitle = ({ setArticleData }) => {
-    // textarea의 value가 변할 때 articleData.title를 변경
     const handleChange = (e) => {
         setArticleData((articleData) => ({
-            ...articleData, // spread 연산자 각각의 프로퍼티를 펼쳐줌. (id, body, title 등등)
+            ...articleData,
             title: e.target.value,
         }));
     };

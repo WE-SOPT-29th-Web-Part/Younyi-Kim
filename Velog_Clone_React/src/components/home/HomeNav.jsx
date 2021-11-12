@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { BrowserRouter, Link, Route, Router, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import SeriesCategory from "../../pages/SeriesCategory";
 
 const HomeNav = () => {
     const [isActiveNav, setIsActiveNav] = useState(true);
@@ -33,7 +32,7 @@ const HomeNav = () => {
 };
 
 export default HomeNav;
-let flag = true;
+
 const StyledHomeNav = styled.nav`
     display: flex;
     position: relative;

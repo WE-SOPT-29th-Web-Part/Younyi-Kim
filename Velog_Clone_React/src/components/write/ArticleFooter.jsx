@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FaArrowLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
 const ArticleFooter = ({ setIsPublishScreen }) => {
     return (
         <StyledArticleFooter>

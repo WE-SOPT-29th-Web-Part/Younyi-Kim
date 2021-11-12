@@ -4,7 +4,7 @@ import styled from "styled-components";
 const ArticleBody = ({ setArticleData }) => {
     const handleChange = (e) => {
         setArticleData((articleData) => ({
-            ...articleData, // spread 연산자 각각의 프로퍼티를 펼쳐줌. (id, body, title 등등)
+            ...articleData,
             body: e.target.value,
         }));
     };
