@@ -26,6 +26,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #3c4245;
+    overflow-x: hidden;
 }
 
 #root {
@@ -37,11 +38,17 @@ body {
 }
 
 .list {
-    width: 0px;
-    visibility: hidden;
+    transform: translateX(-100%);
 }
 
 .list.visible {
-    width: 100%;
-    visibility: visible;
+    transform: translateX(0);
+}
+
+.list_tomorrow {
+    transform: translateX(100%);
+}
+
+.list_tomorrow.visible {
+    transform: translateX(0);
 }

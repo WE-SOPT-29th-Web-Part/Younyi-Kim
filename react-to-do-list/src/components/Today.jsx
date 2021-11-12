@@ -80,10 +80,9 @@ const TodoToday = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    width: 100%;
     position: relative;
     background-color: #719192;
-    border-right: 3px solid #5f6769;
     transition: all 600ms ease;
 
     h2 {
