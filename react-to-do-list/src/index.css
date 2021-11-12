@@ -35,3 +35,13 @@ body {
     flex-direction: column;
     background-color: #3c4245;
 }
+
+.list {
+    width: 0px;
+    visibility: hidden;
+}
+
+.list.visible {
+    width: 100%;
+    visibility: visible;
+}

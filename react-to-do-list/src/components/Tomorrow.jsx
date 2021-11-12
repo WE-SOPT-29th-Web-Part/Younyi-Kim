@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
+import "../index.css";
 
 const Tomorrow = ({ tomorrowInfo, setTomorrowInfo }) => {
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
     const [todoList, setTodoList] = useState([]);
     const [value, setValue] = useState("");
 
@@ -40,7 +47,7 @@ const Tomorrow = ({ tomorrowInfo, setTomorrowInfo }) => {
     };
 
     return (
-        <TodoTomorrow>
+        <TodoTomorrow className={`list ${isMounted && "visible"}`}>
             <h2>Tomorrow</h2>
             <Ul>
                 {tomorrowInfo.data &&
@@ -72,10 +79,10 @@ const TodoTomorrow = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
     position: relative;
     background-color: #719192;
     border-right: 3px solid #5f6769;
+    transition: all 600ms ease;
 
     h2 {
         color: #dfcdc3;

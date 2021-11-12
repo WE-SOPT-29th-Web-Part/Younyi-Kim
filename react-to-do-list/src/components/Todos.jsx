@@ -43,4 +43,5 @@ const Todo = styled.div`
     display: flex;
     flex-grow: 1;
     margin-top: 15px;
+    background-color: #719192;
 `;

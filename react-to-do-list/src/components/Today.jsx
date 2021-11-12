@@ -1,8 +1,15 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useEffect, useRef, useState } from "react";
+import styled, { css } from "styled-components";
 import { v4 as uuidv4 } from "uuid";
+import "../index.css";
 
 const Today = ({ todayInfo, setTodayInfo }) => {
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
     const [todoList, setTodoList] = useState([]);
     const [value, setValue] = useState("");
 
@@ -41,7 +48,7 @@ const Today = ({ todayInfo, setTodayInfo }) => {
     };
 
     return (
-        <TodoToday>
+        <TodoToday className={`list ${isMounted && "visible"}`}>
             <h2>Today</h2>
             <Ul>
                 {todayInfo.data &&
@@ -73,10 +80,11 @@ const TodoToday = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+
     position: relative;
     background-color: #719192;
     border-right: 3px solid #5f6769;
+    transition: all 600ms ease;
 
     h2 {
         color: #dfcdc3;
