@@ -78,3 +78,68 @@ function controlModal(post) {
         body.style.overflow = "scroll";
     });
 }
+
+// 이미지 슬라이더
+const slideList = document.querySelector(".posts");
+const slideContents = document.querySelectorAll(".post");
+const slideBtnPrev = document.querySelector(".slide__btn_prev");
+const slideBtnNext = document.querySelector(".slide__btn_next");
+
+const slideLength = slideContents.length;
+const slideWidth = 320;
+const slideSpeed = 500;
+
+// let firstChild = slideList.firstElementChild;
+// let lastChild = slideList.lastElementChild;
+// let clonedFirst = firstChild.cloneNode(true);
+// let clonedLast = lastChild.cloneNode(true);
+
+// slideList.appendChild(clonedFirst);
+// slideList.insertBefore(clonedLast, slideList.firstElementChild);
+
+slideList.style.width = slideLength * slideWidth + "px";
+
+let curIdx = 1;
+let curSlide = slideContents[curIdx];
+
+slideBtnNext.addEventListener("click", () => {
+    if (curIdx <= slideLength) {
+        slideList.style.transition = slideSpeed + "ms";
+
+        slideList.style.transform = `translate3d(-${
+            slideWidth * curIdx
+        }px, 0px, 0px)`;
+    }
+
+    if (curIdx >= 1) {
+        slideBtnPrev.disabled = false;
+    }
+    if (curIdx >= 8) {
+        slideBtnNext.disabled = true;
+    }
+
+    ++curIdx;
+    console.log("curIdx", curIdx);
+    // curSlide = slideContents[++curIdx];
+});
+
+slideBtnPrev.addEventListener("click", () => {
+    if (curIdx >= 1) {
+        slideList.style.transition = slideSpeed + "ms";
+
+        slideList.style.transform = `translate3d(-${
+            slideWidth * (curIdx - 2)
+        }px, 0px, 0px)`;
+    }
+
+    if (curIdx <= 2) {
+        slideBtnPrev.disabled = true;
+    }
+    if (curIdx >= 1) {
+        slideBtnNext.disabled = false;
+    }
+
+    --curIdx;
+    console.log("prev curIdx", curIdx);
+    // curSlide = slideContents[--curIdx];
+});
