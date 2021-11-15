@@ -47,7 +47,7 @@ const Tomorrow = ({ tomorrowInfo, setTomorrowInfo }) => {
     };
 
     return (
-        <TodoTomorrow className={`list_tomorrow ${isMounted && "visible"}`}>
+        <TodoTomorrow isMounted={isMounted}>
             <h2>Tomorrow</h2>
             <Ul>
                 {tomorrowInfo.data &&
@@ -81,6 +81,8 @@ const TodoTomorrow = styled.div`
     align-items: center;
     position: relative;
     background-color: #719192;
+    transform: ${(props) =>
+        props.isMounted === true ? "translateX(0)" : "translateX(100%)"};
     transition: all 600ms ease;
     width: 100%;
 

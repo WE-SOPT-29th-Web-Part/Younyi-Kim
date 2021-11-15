@@ -3,10 +3,9 @@ import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 import "../index.css";
 
-const Today = ({ todayInfo, setTodayInfo }) => {
+const Today = ({ todayInfo, setTodayInfo, todoStat }) => {
     const [isMounted, setIsMounted] = useState(false);
 
-    console.log(todayInfo);
     useEffect(() => {
         setIsMounted(true);
     }, []);
@@ -49,7 +48,7 @@ const Today = ({ todayInfo, setTodayInfo }) => {
     };
 
     return (
-        <TodoToday className={`list ${isMounted && "visible"}`}>
+        <TodoToday isMounted={isMounted}>
             <h2>Today</h2>
             <Ul>
                 {todayInfo.data &&
@@ -84,6 +83,8 @@ const TodoToday = styled.div`
     width: 100%;
     position: relative;
     background-color: #719192;
+    transform: ${(props) =>
+        props.isMounted === true ? "translateX(0)" : "translateX(-100%)"};
     transition: all 600ms ease;
 
     h2 {
