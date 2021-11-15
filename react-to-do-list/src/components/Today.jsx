@@ -6,6 +6,7 @@ import "../index.css";
 const Today = ({ todayInfo, setTodayInfo }) => {
     const [isMounted, setIsMounted] = useState(false);
 
+    console.log(todayInfo);
     useEffect(() => {
         setIsMounted(true);
     }, []);

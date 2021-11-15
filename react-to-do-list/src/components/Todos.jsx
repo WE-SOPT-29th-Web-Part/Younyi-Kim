@@ -4,9 +4,9 @@ import Today from "./Today";
 import Tomorrow from "./Tomorrow";
 
 const Todos = ({ todoStat }) => {
-    const [tomorrowInfo, setTomorrowInfo] = useState([{ data: null }]);
+    const [tomorrowInfo, setTomorrowInfo] = useState({ data: null });
 
-    const [todayInfo, setTodayInfo] = useState([{ data: null }]);
+    const [todayInfo, setTodayInfo] = useState({ data: null });
 
     switch (todoStat.status) {
         case "today":
