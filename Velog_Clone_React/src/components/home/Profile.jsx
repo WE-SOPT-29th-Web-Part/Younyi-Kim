@@ -1,15 +1,15 @@
-import React from "react";
-import styled from "styled-components";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import React from 'react';
+import styled from 'styled-components';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Profile = () => {
     return (
         <>
             <StyledProfile>
                 <img
-                    src="https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=240"
-                    alt=""
-                    class="header__item-profile"
+                    src='https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=240'
+                    alt=''
+                    class='header__item-profile'
                 />
                 <div>
                     <h2>Younyi</h2>
@@ -36,7 +36,7 @@ const Profile = () => {
 export default Profile;
 
 const StyledProfile = styled.div`
-    @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
     display: flex;
     flex-direction: column;
@@ -45,7 +45,7 @@ const StyledProfile = styled.div`
     align-items: flex-start;
     width: calc(100% - 2rem);
     margin-top: 50px;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
 
     img {
         display: block;

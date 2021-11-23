@@ -81,5 +81,20 @@
       "data": "",
       "date": "2021년 11월 12일"
     }
+  ],
+  "series": [
+      {
+        "id": 7,
+        "title": "Series",
+        "body": "Series 사용함~~~",
+        "summary": "아자뵤 솝트",
+        "series": "",
+        "tags": [
+          "솝트"
+        ],
+        "thumbnail": "",
+        "data": "",
+        "date": "2021년 11월 12일"
+      }
   ]
 }
