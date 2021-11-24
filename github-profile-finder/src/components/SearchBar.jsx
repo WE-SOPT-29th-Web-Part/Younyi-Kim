@@ -23,6 +23,8 @@ const SearchBar = ({ setUserInfo }) => {
                 `https://api.github.com/users/${user}`
             );
 
+            console.log(data);
+
             setUserInfo((currentUserInfo) => ({
                 ...currentUserInfo,
                 data: data,
