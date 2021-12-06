@@ -75,15 +75,12 @@ const StyledSNS = styled.div`
     color: rgb(134, 142, 150);
     margin-bottom: 0.5rem;
 
-    a {
+    & > svg {
         cursor: pointer;
+        margin-right: 1rem;
     }
 
-    a + a {
-        margin-left: 15px;
-    }
-
-    a:hover {
+    & > svg:hover {
         color: black;
     }
 `;

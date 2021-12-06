@@ -58,6 +58,10 @@ const StyledLeft = styled.div`
     &:hover svg {
         fill: rgb(32, 201, 151);
     }
+
+    & > p {
+        margin-left: 0.3rem;
+    }
 `;
 
 const StyledRight = styled.div`

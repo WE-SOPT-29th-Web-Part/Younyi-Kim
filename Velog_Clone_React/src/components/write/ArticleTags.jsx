@@ -44,6 +44,7 @@ export const StyledArticleTags = styled.div`
         outline: 0;
         height: 1.5rem;
         line-height: 1.5rem;
+        margin-left: 1rem;
     }
 
     & > input::placeholder {
