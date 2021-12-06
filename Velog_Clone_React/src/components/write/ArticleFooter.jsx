@@ -1,18 +1,19 @@
-import React from "react";
-import styled from "styled-components";
-import { FaArrowLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { FaArrowLeft } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const ArticleFooter = ({ setIsPublishScreen }) => {
+    const navigate = useNavigate();
     return (
         <StyledArticleFooter>
             <StyledFooterWrapper>
-                <button>
+                <div>
                     <FaArrowLeft />
-                    <StyledLink to="/">
+                    <StyledLink onClick={(e) => navigate('/')}>
                         <span>나가기</span>
                     </StyledLink>
-                </button>
+                </div>
                 <StyledSubmitButton>
                     <button>임시저장</button>
                     <button onClick={() => setIsPublishScreen(true)}>
@@ -41,7 +42,7 @@ const StyledFooterWrapper = styled.div`
     padding: 1rem;
     box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
 
-    button {
+    div {
         border: 0;
         outline: 0;
         cursor: pointer;
@@ -72,7 +73,7 @@ const StyledSubmitButton = styled.div`
     }
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.button`
     margin-left: 10px;
     font-size: 1.125rem;
     text-decoration: none;

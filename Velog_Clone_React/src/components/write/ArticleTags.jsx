@@ -1,25 +1,28 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-const ArticleTags = ({ tags, articleData, setArticleData }) => {
+const ArticleTags = ({ tags, onArrDataChange, onArrDataRemove }) => {
     const handleKeyPress = (e) => {
-        if (e.key === "Enter") {
-            const tempData = { ...articleData };
-
-            tempData.tags = [...tempData.tags, e.target.value];
-            setArticleData(tempData);
-
-            e.target.value = "";
+        if (e.key === 'Enter') {
+            if (e.target.value === '' || tags.includes(e.target.value)) {
+                // 빈값과 중복값은 태그로 추가하지 않음
+                e.target.value = '';
+                return;
+            }
+            onArrDataChange('tags', e.target.value);
+            e.target.value = '';
         }
     };
     return (
         <StyledArticleTags>
             {tags.map((tag) => (
-                <span key={tag}>{tag}</span>
+                <span key={tag} onClick={(e) => onArrDataRemove('tags', tag)}>
+                    {tag}
+                </span>
             ))}
             <input
-                type="text"
-                placeholder="태그를 입력하세요"
+                type='text'
+                placeholder='태그를 입력하세요'
                 onKeyPress={handleKeyPress}
             />
         </StyledArticleTags>
@@ -28,7 +31,7 @@ const ArticleTags = ({ tags, articleData, setArticleData }) => {
 
 export default ArticleTags;
 
-const StyledArticleTags = styled.div`
+export const StyledArticleTags = styled.div`
     padding: 0 1rem 2rem 1rem;
     display: flex;
 

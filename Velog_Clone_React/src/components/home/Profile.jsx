@@ -9,7 +9,7 @@ const Profile = () => {
                 <img
                     src='https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=240'
                     alt=''
-                    class='header__item-profile'
+                    className='header__item-profile'
                 />
                 <div>
                     <h2>Younyi</h2>
@@ -17,15 +17,9 @@ const Profile = () => {
                 </div>
                 <StyledLine></StyledLine>
                 <StyledSNS>
-                    <a>
-                        <FaGithub />
-                    </a>
-                    <a>
-                        <FaInstagram />
-                    </a>
-                    <a>
-                        <FaLinkedin />
-                    </a>
+                    <FaGithub />
+                    <FaInstagram />
+                    <FaLinkedin />
                 </StyledSNS>
             </StyledProfile>
             <StyledDiv></StyledDiv>

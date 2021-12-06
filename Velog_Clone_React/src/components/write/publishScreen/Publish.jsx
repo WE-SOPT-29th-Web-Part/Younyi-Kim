@@ -1,22 +1,19 @@
-import React from "react";
-import PublishPreview from "./PublishPreview";
-import PublishSubmit from "./PublishSubmit";
-import styled from "styled-components";
+import React from 'react';
+import PublishPreview from './PublishPreview';
+import PublishSubmit from './PublishSubmit';
+import styled from 'styled-components';
 
 const Publish = ({
     summary,
     createArticle,
-    handleDataChange,
+    onDataChange,
     isPublishScreen,
     setIsPublishScreen,
 }) => {
     if (!isPublishScreen) return null;
     return (
         <StyledRoot isPublishScreen={isPublishScreen}>
-            <PublishPreview
-                summary={summary}
-                handleDataChange={handleDataChange}
-            />
+            <PublishPreview summary={summary} onDataChange={onDataChange} />
             <PublishSubmit
                 setIsPublishScreen={setIsPublishScreen}
                 createArticle={createArticle}

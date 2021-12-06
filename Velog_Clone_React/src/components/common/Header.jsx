@@ -1,29 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { ReactComponent as ArrowDropDownImage } from "../../assets/icons/arrow-down.svg";
-import { ReactComponent as VelogIcon } from "../../assets/icons/velog-icon.svg";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { ReactComponent as ArrowDropDownImage } from '../../assets/icons/arrow-down.svg';
+import { ReactComponent as VelogIcon } from '../../assets/icons/velog-icon.svg';
 
 const Header = () => {
     return (
         <StyledHeader>
             <StyledLeft>
                 <VelogIcon />
-                <a>gokuku.log</a>
+                <p>gokuku.log</p>
             </StyledLeft>
             <StyledRight>
-                <Link to="/write">
+                <Link to='/write'>
                     <button>새 글 작성</button>
                 </Link>
                 <div>
                     <img
-                        src="https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=120"
-                        alt=""
-                        class="header__item-profile"
+                        src='https://media.vlpt.us/images/younyikim/profile/b4c2c97c-ca03-425f-811d-f5dc0de5e936/KakaoTalk_20210826_220638015_01.jpg?w=120'
+                        alt=''
+                        className='header__item-profile'
                     />
                 </div>
                 <button>
-                    <ArrowDropDownImage fill="black" />
+                    <ArrowDropDownImage fill='black' />
                 </button>
             </StyledRight>
         </StyledHeader>

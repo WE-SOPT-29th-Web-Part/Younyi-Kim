@@ -2,8 +2,7 @@ import React from 'react';
 import Header from '../components/common/Header';
 import Profile from '../components/home/Profile';
 import HomeNav from '../components/home/HomeNav';
-import { Outlet, Route } from 'react-router';
-import MarkdownRender from '../components/MarkdownRender';
+import { Outlet } from 'react-router';
 
 const Home = () => {
     return (
@@ -11,7 +10,6 @@ const Home = () => {
             <div>
                 <Header />
                 <Profile />
-                <MarkdownRender />
                 <HomeNav />
                 <Outlet />
             </div>
