@@ -1,7 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import { imageClient } from '../../../libs/api';
 
-const PublishPreview = ({ summary, handleDataChange }) => {
+const PublishPreview = ({ summary, onDataChange }) => {
     const MAX_LEN = 150;
 
     const handleChange = (e) => {
@@ -16,28 +17,43 @@ const PublishPreview = ({ summary, handleDataChange }) => {
             );
             const resultSummary = summary + fillSpace;
 
-            handleDataChange("summary", resultSummary);
+            onDataChange('summary', resultSummary);
             return;
         }
 
-        handleDataChange("summary", value);
+        onDataChange('summary', value);
+    };
+
+    // Server에 이미지를 보내고, 정제된 이미지 url을 받아온다. => GET
+    // 받아온 url을 articleData의 thumbnail에 저장해서 => POST
+    const handleImgChange = async (e) => {
+        console.log(e.target.files[0]);
+
+        const formData = new FormData();
+        const imageFile = e.target.files[0];
+
+        formData.append('file', imageFile);
+
+        // imageClient의 baseurl : http://localhost:5000/api/image
+        //POST /api/image , Content-Type: multipart/form-data
+        const imageResponse = await imageClient.post('', formData);
+        const imageUrl = imageResponse.data.url;
+
+        onDataChange('thumbnail', imageUrl);
     };
 
     return (
         <StyledPreview>
             <h2>포스트 미리보기</h2>
-            <StyledImgUpload>
-                <button>썸네일 업로드</button>
-            </StyledImgUpload>
+            <input type='file' onChange={handleImgChange} />
             <StyledSummary>
-                <h3></h3>
                 <textarea
-                    placeholder="당신의 포스트를 짧게 소개해보세요..."
+                    placeholder='당신의 포스트를 짧게 소개해보세요...'
                     value={summary}
                     onChange={handleChange}
                 ></textarea>
                 <StyledLength limit={summary.length === 150}>
-                    {summary.length || "0"} / <span>150</span>
+                    {summary.length || '0'} / <span>150</span>
                 </StyledLength>
             </StyledSummary>
         </StyledPreview>
@@ -60,25 +76,6 @@ const StyledPreview = styled.div`
         font-size: 20px;
         font-weight: bold;
         margin-bottom: 1rem;
-    }
-`;
-
-const StyledImgUpload = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 200px;
-    background-color: rgb(233, 236, 239);
-
-    & > button {
-        padding: 0.3rem 0.8rem;
-        border-radius: 5px;
-        font-size: 1.125rem;
-        border: 0;
-        outline: 0;
-        background: white;
-        color: rgb(18, 184, 134);
     }
 `;
 

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { client } from "../../libs/api";
-import axios from "axios";
-import ArticleCard from "../write/ArticleCard";
+import React, { useEffect, useState } from 'react';
+import { client } from '../../libs/api';
+
+import ArticleCard from '../write/ArticleCard';
 
 const ArticlesContainer = () => {
     // Data 받기 - axios / async, await
@@ -9,8 +9,9 @@ const ArticlesContainer = () => {
     const [articledData, setArticleData] = useState([]);
 
     const getArticleData = async () => {
-        const { data } = await client.get("/article");
+        const { data } = await client.get('/article');
         setArticleData(data);
+        console.log(data);
     };
 
     // http://localhost:4000/article => 다회 통신

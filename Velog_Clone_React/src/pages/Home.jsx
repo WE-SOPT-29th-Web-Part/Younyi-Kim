@@ -1,8 +1,8 @@
-import React from "react";
-import Header from "../components/common/Header";
-import Profile from "../components/home/Profile";
-import HomeNav from "../components/home/HomeNav";
-import { Outlet, Route } from "react-router";
+import React from 'react';
+import Header from '../components/common/Header';
+import Profile from '../components/home/Profile';
+import HomeNav from '../components/home/HomeNav';
+import { Outlet } from 'react-router';
 
 const Home = () => {
     return (

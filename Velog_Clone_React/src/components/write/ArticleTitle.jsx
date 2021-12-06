@@ -1,18 +1,13 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-const ArticleTitle = ({ setArticleData }) => {
-    const handleChange = (e) => {
-        setArticleData((articleData) => ({
-            ...articleData,
-            title: e.target.value,
-        }));
-    };
+const ArticleTitle = ({ onDataChange, title }) => {
     return (
         <StyledTitle>
             <textarea
-                placeholder="제목을 입력하세요"
-                onChange={handleChange}
+                placeholder='제목을 입력하세요'
+                value={title}
+                onChange={(e) => onDataChange('title', e.target.value)}
             ></textarea>
             <StyledTitleLine></StyledTitleLine>
         </StyledTitle>

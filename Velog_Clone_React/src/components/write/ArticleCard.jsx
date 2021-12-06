@@ -1,23 +1,29 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import ImgWrapper from '../common/ImgWrapper';
 
 const ArticleCard = ({ article }) => {
-    const { id, title, body, summary, series, tags, thumbnail, date } = article;
+    const { title, summary, tags, thumbnail, date } = article;
 
     return (
         <>
             <StyledCard>
-                <StyledImageWrapper>
-                    <img src={thumbnail} />
-                </StyledImageWrapper>
-                <p>
+                <Link to={`article/${article.id}`} state={article}>
+                    {thumbnail && (
+                        <ImgWrapper ratio='56%'>
+                            <img src={thumbnail} alt='thumbnail' />
+                        </ImgWrapper>
+                    )}
+                </Link>
+                <div>
                     <h3>{title}</h3>
                     <h4>{summary}</h4>
                     {tags.map((tag) => (
                         <span key={tag}>{tag}</span>
                     ))}
                     <div>{date}</div>
-                </p>
+                </div>
             </StyledCard>
         </>
     );
@@ -26,17 +32,17 @@ const ArticleCard = ({ article }) => {
 export default ArticleCard;
 
 const StyledCard = styled.div`
-    @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
     width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 2rem;
     margin-top: 4rem;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     border-bottom: 1px solid rgb(233, 236, 239);
 
-    p {
+    div {
         font-size: 0.875rem;
         margin-top: 10px;
         color: rgb(73, 80, 87);

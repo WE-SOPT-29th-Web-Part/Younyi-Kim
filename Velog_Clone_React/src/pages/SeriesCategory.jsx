@@ -1,7 +1,27 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { client } from '../libs/api';
+import ReactMarkdown from 'react-markdown';
+
 const SeriesCategory = () => {
-    return <StyledRoot>SeriesCategory</StyledRoot>;
+    // Data 받아오기
+    const [seriesData, setSeriesData] = useState([]);
+
+    const getSeriesData = async () => {
+        const { data } = await client.get('/series');
+        setSeriesData(data);
+        console.log(`data`, data);
+    };
+
+    useEffect(() => {
+        getSeriesData();
+    }, []);
+
+    return (
+        <StyledRoot>
+            <ReactMarkdown> # Heading</ReactMarkdown>
+        </StyledRoot>
+    );
 };
 
 export default SeriesCategory;
