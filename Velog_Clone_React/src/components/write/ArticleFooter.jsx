@@ -41,17 +41,12 @@ const StyledFooterWrapper = styled.div`
     width: 100%;
     padding: 1rem;
     box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
-
-    div {
-        border: 0;
-        outline: 0;
-        cursor: pointer;
-        background-color: inherit;
-    }
 `;
 
 const StyledSubmitButton = styled.div`
     button {
+        border: 0;
+        cursor: pointer;
         padding: 0.7rem 1.2rem;
         border-radius: 5px;
         font-size: 1.125rem;
@@ -74,6 +69,9 @@ const StyledSubmitButton = styled.div`
 `;
 
 const StyledLink = styled.button`
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
     margin-left: 10px;
     font-size: 1.125rem;
     text-decoration: none;

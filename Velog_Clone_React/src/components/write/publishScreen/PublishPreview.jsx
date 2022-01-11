@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { imageClient } from '../../../libs/api';
 
 const PublishPreview = ({ summary, onDataChange }) => {
+    const [previewUrl, setPreviewUrl] = useState();
+
     const MAX_LEN = 150;
 
     const handleChange = (e) => {
@@ -39,6 +41,7 @@ const PublishPreview = ({ summary, onDataChange }) => {
         const imageResponse = await imageClient.post('', formData);
         const imageUrl = imageResponse.data.url;
 
+        setPreviewUrl(imageUrl);
         onDataChange('thumbnail', imageUrl);
     };
 
@@ -46,6 +49,11 @@ const PublishPreview = ({ summary, onDataChange }) => {
         <StyledPreview>
             <h2>포스트 미리보기</h2>
             <input type='file' onChange={handleImgChange} />
+            {previewUrl && (
+                <StyledPreviewImg>
+                    <img src={previewUrl} alt='' />
+                </StyledPreviewImg>
+            )}
             <StyledSummary>
                 <textarea
                     placeholder='당신의 포스트를 짧게 소개해보세요...'
@@ -76,6 +84,14 @@ const StyledPreview = styled.div`
         font-size: 20px;
         font-weight: bold;
         margin-bottom: 1rem;
+    }
+`;
+
+const StyledPreviewImg = styled.div`
+    margin-top: 1rem;
+    & > img {
+        width: 100%;
+        height: 20rem;
     }
 `;
 

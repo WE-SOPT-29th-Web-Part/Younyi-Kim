@@ -16,14 +16,16 @@ const ArticleCard = ({ article }) => {
                         </ImgWrapper>
                     )}
                 </Link>
-                <div>
-                    <h3>{title}</h3>
-                    <h4>{summary}</h4>
-                    {tags.map((tag) => (
-                        <span key={tag}>{tag}</span>
-                    ))}
-                    <div>{date}</div>
-                </div>
+                <StyledLink to={`article/${article.id}`} state={article}>
+                    <div>
+                        <h3>{title}</h3>
+                        <h4>{summary}</h4>
+                        {tags.map((tag) => (
+                            <span key={tag}>{tag}</span>
+                        ))}
+                        <div>{date}</div>
+                    </div>
+                </StyledLink>
             </StyledCard>
         </>
     );
@@ -31,6 +33,9 @@ const ArticleCard = ({ article }) => {
 
 export default ArticleCard;
 
+const StyledLink = styled(Link)`
+    text-decoration: none;
+`;
 const StyledCard = styled.div`
     @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 

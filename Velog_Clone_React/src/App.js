@@ -11,9 +11,10 @@ function App() {
         <>
             <BrowserRouter>
                 <Routes>
-                    <Route path='/*' element={<Home />} />
-                    <Route path='/' element={<ArticlesContainer />} />
-                    <Route path='/series' element={<SeriesCategory />} />
+                    <Route path='/*' element={<Home />}>
+                        <Route path='' element={<ArticlesContainer />} />
+                        <Route path='series' element={<SeriesCategory />} />
+                    </Route>
                     <Route path='/article/:id' element={<Article />} />
                     <Route path='/article/edit/:id' element={<Write />} />
                     <Route path='/write' element={<Write />} />
